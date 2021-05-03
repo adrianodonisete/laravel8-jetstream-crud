@@ -9,3 +9,8 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/generic', function () {
+    return config('database');
+    // return view('dashboard');
+})->name('generic');
